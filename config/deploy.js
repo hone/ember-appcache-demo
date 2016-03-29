@@ -4,6 +4,9 @@
 module.exports = function(deployTarget) {
   var ENV = {
     build: {},
+    gzip: {
+      keep: true
+    },
 
     appshell: {
       excludePattern: '{robots.txt,crossdomain.xml}',

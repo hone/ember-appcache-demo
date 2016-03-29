@@ -3,6 +3,11 @@
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
+  var prepend = '';
+  if ('FASTLY_CDN_URL' in process.env) {
+    prepend = `https://${process.env.FASTLY_CDN_URL}/`;
+  }
+
   var app = new EmberApp(defaults, {
 
     // appshell is responsible for deciding when to run our app, so no autorun
@@ -15,7 +20,8 @@ module.exports = function(defaults) {
 
     fingerprint: {
       extensions: ['js', 'css', 'png', 'jpg', 'jpeg', 'gif', 'map', 'svg', 'ttf', 'woff', 'eot', 'ttc', 'woff2'],
-      exclude: ['touch-icon*.png']
+      exclude: ['touch-icon*.png'],
+      prepend: prepend
     },
 
     babel: {
