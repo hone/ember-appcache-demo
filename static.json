@@ -9,7 +9,8 @@
     },
     "/**": {
       "Cache-Control": "public, max-age=512000",
-      "Vary": "Accept-Encoding"
+      "Vary": "Accept-Encoding",
+      "Access-Control-Allow-Origin": "*"
     }
   }
 }
