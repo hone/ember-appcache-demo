@@ -40,9 +40,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // for deployment to Github Pages
-    ENV.locationType = 'hash';
-    ENV.baseURL = '/ember-appcache-demo/';
   }
 
   return ENV;

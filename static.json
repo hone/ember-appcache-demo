@@ -1,0 +1,15 @@
+{
+  "root": "tmp/deploy-dist",
+  "routes": {
+    "/**": "index.html"
+  },
+  "headers": {
+    "/": {
+      "Cache-Control": "no-store, no-cache"
+    },
+    "/**": {
+      "Cache-Control": "public, max-age=512000",
+      "Vary": "Accept-Encoding"
+    }
+  }
+}
